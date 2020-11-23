@@ -1,19 +1,23 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+  <script>
+    $(document).ready(function(){
+            $('#myModal').modal('show');
+    });
+  </script>
+  <script>
+    window.onload = function(){
+      var element = document.getElementById("error_message");
+      element.classList.toggle("alert-null");
+    };
+  </script>
 <style>
-/*body {
-  background-image: url('https://media.discordapp.net/attachments/772472192151453707/776006589500882944/login_no_logo.png?width=1028&height=495');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-
-}
 .my-btn-info {
         color: #fff;
         background-color: #042F5A !important;
         border-color: #042F5A!important;
-        margin-left: 210px;
+        margin-left: 22px;
       }
 .login{
  text-align: center;
@@ -26,9 +30,10 @@
 } 
 .tuimage{
    margin-top: 100px;
+   margin-left: -30px;
   text-align: center;
 
-}*/
+}
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400&display=swap');
 * {
     margin: 0;
@@ -233,6 +238,7 @@ body {
 .errorContainer{
     background: #DDAAAA;
     padding: 2px;
+    margin-left: 60px;
     display: none;
 
 }
@@ -270,23 +276,42 @@ alert-null {
 </head>
 
 <body>
-  <div class="row" >
-    <div class="column" >
-      <img src="https://i.imgur.com/u0s7hgn.pngp" alt="Tu" width="500" height="500"> 
+  <div class = "tuimage">
+    <img src="https://cdn.discordapp.com/attachments/772472192151453707/774994499683745802/TU_logo.png" alt="TU" style="width:200px;height:200px;">
     </div>
-        <form action="/api" class="login-form" method="POST">
-          <h1>เข้าสู่ระบบ (นักศึกษา/บุคลากร)</h1>
-          <div class="txtb">
-              <input type="text" id="user" name="user" placeholder="Username" value="" required>
-          </div>
-          <div class="txtb">
-              <input type="password" id="pwd" name="pwd" placeholder="Password" value="" required>
-          </div>
-
-          <div style="padding-left: 72% ;padding-bottom: 5%;">
-
-
-          </div>
+    <div id="login">
+      <!-- <h3 class="text-center  pt-5"></h3> -->
+      <div class="container">
+        <div
+          id="login-row"
+          class="row justify-content-center align-items-center"
+        >
+          <div id="login-column" class="col-md-6">
+            <div id="login-box" class="col-md-12">
+              <form id="login-form" class="form" action="/api" method="post" novalidate>
+                <h3 class="text-center my-text-info">Login</h3>
+                <div class="form-group">
+                  <label for="user" class="my-text-info"
+                    >เลขทะเบียนนักศึกษา:</label
+                  ><br />
+                  <input
+                    type="text"
+                    name="user"
+                    id="user"
+                    class="form-control"
+                    placeholder="6XXXXXXXXX"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="pwd" class="my-text-info">รหัสผ่าน:</label><br />
+                  <input
+                    type="password"
+                    name="pwd"
+                    id="pwd"
+                    class="form-control"
+                    placeholder="***********"
+                  />
+                </div>
           <div class="alert-error" id="error_message">
             <h6><% if (locals.errors) { %>
               <div class="err_msg" style="padding: .75rem 1.25rem;margin-bottom: 1rem;border: 1px solid transparent;border-radius: .25rem;color: #a94442;background-color: #f2dede;border-color: #ebccd1;">
@@ -297,8 +322,7 @@ alert-null {
             %></h6>
           </div>
           <div style="padding-left: 198px ;">
-            <input type="submit" class="logbtn" value="Login" onclick="lsRememberMe()">
-            <input type="reset" class="logbtn" value="Reset">
+            <input type="submit" class="my-btn-info" value="เข้าสู่ระบบ" onclick="lsRememberMe()">
           </div>
         </form>
 
