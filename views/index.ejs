@@ -2,7 +2,7 @@
 <html>
 <head>
 <style>
-body {
+/*body {
   background-image: url('https://media.discordapp.net/attachments/772472192151453707/776006589500882944/login_no_logo.png?width=1028&height=495');
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -28,7 +28,234 @@ body {
    margin-top: 100px;
   text-align: center;
 
+}*/
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: montserrat;
+    box-sizing: border-box;
 }
+
+body {
+  background-image: url('https://media.discordapp.net/attachments/772472192151453707/776006589500882944/login_no_logo.png?width=1028&height=495');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+
+}
+
+.err_msg{
+    margin-bottom: 0px;
+}
+
+.login-form {
+    width: 472px;
+    background: #e9a20a85;
+    height: 368px;
+    padding: 10px 35px;
+    /*border-radius: 10px;*/
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    box-shadow: 2px 2px 3px 0.2px #f02b2b;
+    /*transform: translate(-50%, -50%);*/
+}
+
+.login-form h1 {
+    font-family: 'Kanit';
+    -webkit-font-smoothing: antialiased;
+    display: block;
+    font-size: 1.25em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    /*text-align: left;
+    font-size: 1.17em;
+    margin-bottom: 20px;
+    font-weight: 500;*/
+}
+
+.txtb {
+    color: #000000; padding-left: 15px;
+    border-radius: 5px 5px 5px 5px;
+    border: solid 1px #cbc9c9; 
+    background-color: #FFFFFF;
+    position: relative;
+    margin: 20px 0;
+}
+
+.txtb:focus{
+    border-color: #33cabb;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.txtb input {
+    font-family: 'Kanit', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 15px;
+    color: #333;
+    border: none;
+    width: 100%;
+    outline: none;
+    background: none;
+    padding: 0 5px;
+    height: 40px;
+}
+
+.logbtn {
+    font-family: 'Kanit';
+    font-size: 15px;
+    width: 100px;
+    height: 35px;
+    border: none;
+    background-color: #e79820;
+    background-size: 200%;
+    border-radius: 5px 5px 5px 5px;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+}
+.logbtn2{
+    font-family: 'Kanit';
+    font-size: 15px;
+    width: 100px;
+    height: 35px;
+    border: none;
+    background-color: #e73e20;
+    background-size: 200%;
+    border-radius: 5px 5px 5px 5px;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+}
+
+
+.logbtn:hover {
+    background-color: #f75f19;
+}
+
+.bottom-text {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 13px;
+}
+
+
+.forgt-btn{
+    margin: 25px;
+    padding: 0px 27px 0px 73px;
+
+}
+.forgt-text{
+    margin: -30px;
+    padding: 0px 58px 36px 76px;
+}
+.rest-text{
+
+    padding: 47px 45px 47px 43px;
+
+}
+
+.div-2columns{
+    position: absolute;
+    left: 50%;
+    width: 1400px;
+    height: 100%;
+    background-color: #d14f4b;
+    transform: translate(-50%);
+}
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    /*padding-top: 20px;*/
+  }
+  
+  .left {
+    left: 0;
+    background-color: #d14f4b;
+  }
+  
+  .right {
+    right: 0;
+    background-color: #f1f1f1;
+  }
+  
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .centered img {
+    width: 150px;
+    border-radius: 50%;
+  }
+
+.column {
+    /*position: absolute;*/
+    bottom: 50%;
+    width: 50%;
+    /*padding: 10px;*/
+    height: 758px;
+}
+  
+/* Clear floats after the columns */
+.row{
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 10%;
+    max-width: 1100px;
+    width: 1100px;
+    max-height: 758px;
+    height: 758px;
+    transform: translate(-50%);
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.errorContainer{
+    background: #DDAAAA;
+    padding: 2px;
+    display: none;
+
+}
+
+.alert-error{
+    position: relative;
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.alert-success_msg{
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+alert-null {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
 
 </style>
   <title>Bootstrap Example</title>
@@ -43,112 +270,40 @@ body {
 </head>
 
 <body>
-
-<style>
-
-</style>
-
-<div class = "tuimage">
-<img src="https://cdn.discordapp.com/attachments/772472192151453707/774994499683745802/TU_logo.png" alt="TU" style="width:200px;height:200px;">
-</div>
-  <div id="login">
-      <!-- <h3 class="text-center  pt-5"></h3> -->
-      <div class="container">
-        <div
-          id="login-row"
-          class="row justify-content-center align-items-center"
-        >
-          <div id="login-column" class="col-md-6">
-            <div id="login-box" class="col-md-12">
-              <form id="login-form" class="form" action="/api" method="post" novalidate>
-                <h3 class="text-center my-text-info">Login</h3>
-                <div class="form-group">
-                  <label for="user" class="my-text-info"
-                    >เลขทะเบียนนักศึกษา:</label
-                  ><br />
-                  <input
-                    type="text"
-                    name="user"
-                    id="user"
-                    class="form-control"
-                    placeholder="6XXXXXXXXX"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="pwd" class="my-text-info">รหัสผ่าน:</label><br />
-                  <input
-                    type="password"
-                    name="pwd"
-                    id="pwd"
-                    class="form-control"
-                    placeholder="***********"
-                  />
-                </div>
-                <div class="form-group">
-                  <p id="showerror" class="error" style="display: none;">Invalid Username or Password</p>
-                </div>
-                <div class="form-group">
-                  <input
-                    type="submit"
-                    name="submit"
-                    class="btn btn-info btn-md my-btn-info"
-                    value="เข้าสู่ระบบ"
-                  />
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+  <div class="row" >
+    <div class="column" >
+      <img src="https://i.imgur.com/u0s7hgn.pngp" alt="Tu" width="500" height="500"> 
     </div>
-    <script>
-      async function postData(url = "", data = {}) {
-        const response = await fetch(url, {
-          method: "POST", // *GET, POST, PUT, DELETE, etc.
-          mode: "cors", // no-cors, *cors, same-origin
-          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-          credentials: "same-origin", // include, *same-origin, omit
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          redirect: "follow", // manual, *follow, error
-          referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-          body: data, // body data type must match "Content-Type" header
-        });
-        return response.json(); // parses JSON response into native JavaScript objects
-      }
-     
-      const form = document.getElementById( "login-form" );
-      form.addEventListener("submit", function(e){
-        e.preventDefault();
-        var formBody = [];
-        var un = $('#user').val();
-        var pw = $('#pwd').val();
-        
-        formBody.push(encodeURIComponent("user") + '=' + encodeURIComponent(un));
-        formBody.push(encodeURIComponent("pwd") + '=' + encodeURIComponent(pw));
-        formBody = formBody.join("&").replace( /%20/g, '+' );
-        console.log(formBody);
-        postData('http://localhost:5000/api', formBody)
-        .then( data => {
-          console.log(data);
-          if (data.status) {
-            window.location = '/main/' + un;
-            return true;
-          } else {
-            document.getElementById("showerror").style.display = "block";
-            return false;
-          }
-        })
-        .catch((error) =>{
-          console.log(error);
-          return false;
-        });
+        <form action="/api" class="login-form" method="POST">
+          <h1>เข้าสู่ระบบ (นักศึกษา/บุคลากร)</h1>
+          <div class="txtb">
+              <input type="text" id="user" name="user" placeholder="Username" value="" required>
+          </div>
+          <div class="txtb">
+              <input type="password" id="pwd" name="pwd" placeholder="Password" value="" required>
+          </div>
 
-        return false;
-      });
-    </script>
+          <div style="padding-left: 72% ;padding-bottom: 5%;">
+
+
+          </div>
+          <div class="alert-error" id="error_message">
+            <h6><% if (locals.errors) { %>
+              <div class="err_msg" style="padding: .75rem 1.25rem;margin-bottom: 1rem;border: 1px solid transparent;border-radius: .25rem;color: #a94442;background-color: #f2dede;border-color: #ebccd1;">
+                User or Password Invalid!
+              </div>
+
+            <% }
+            %></h6>
+          </div>
+          <div style="padding-left: 198px ;">
+            <input type="submit" class="logbtn" value="Login" onclick="lsRememberMe()">
+            <input type="reset" class="logbtn" value="Reset">
+          </div>
+        </form>
+
+
+
 </body>
 </html>
 
