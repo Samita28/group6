@@ -3,11 +3,12 @@ var express = require('express');
 var path = require('path');
 var https = require('https');
 var http = require('http');
-
+var bodyParser = require("body-parser");
 var PORT  = process.env.PORT || 5000;
 
 var app = express();
-
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -19,78 +20,143 @@ app.listen(PORT, function () {
     console.log(`Listening on ${PORT}`)
 });
 
-app.get('/api', function (req, res) {
-    const queryParams = req.query;
-    if(queryParams['user'] == 'a' && queryParams['pwd'] == '123'){
-        res.send('login sucess');
+app.get("/main/:id", async function (req, res) {
+    var nameid = req.params.id;
+    console.log(nameid);
+    const data = await getStudentInfo(nameid);
+    console.log(data);
+    if (data) {
+        let j = JSON.parse(data);
+        if(j.data.type == "student"){
+        res.render("main",
+            {
+                prefix: j.data.prefixname,
+                name_th: j.data.displayname_th,
+                name_en: j.data.displayname_en,
+                email: j.data.email,
+                faculty: j.data.faculty,
+                department: j.data.department
+            });
+        }
+        else if (j.data.type == "employee"){
+            res.render("main",{
+            prefix: j.data.prefixname,
+            name_th: j.data.displayname_th,
+            name_en: j.data.displayname_en,
+            email: j.data.email,
+            organization: j.data.organization,
+            department: j.data.department
+            
+        });
     }
-    else{
-         
-        res.send('login fail');
     }
 
 });
+app.get('/main', function (req, res) {
+    res.render('main')
+});
+app.get('/status', function (req, res) {
+    res.render('status')
+});
+app.get('/logout', function (req, res) {
+    res.render('index')
+});
+app.get('/Fill-up', function (req, res) {
+    res.render('Fill-up')
+});
+app.get('/results', function (req, res) {
+    res.render('results')
+});
+app.post("/api", async (req, res) => {
 
+    console.log(req.body);
+    const temp = await getlogin(req.body.user, req.body.pwd);
+    console.log("temp = " + temp);
+    if (temp) {
+        let j = JSON.parse(temp);
+        console.log(j);
+        if (j.status == true) {
+            res.send(temp);
+        } else {
+            res.send('{"status":false}');
+        }
+    } else {
+        res.send('{"status":false}');
+    }
+});
 
+const getlogin = (userName, password) => {
+    return new Promise((resolve, reject) => {
+        var options = {
+            'method': 'POST',
+            'hostname': 'restapi.tu.ac.th',
+            'path': '/api/v1/auth/Ad/verify',
+            'headers': {
+                'Content-Type': 'application/json',
+                'Application-Key': 'TU69e3ac6f76a80601459e0900b0cc4c9bf015ba6425b741a52aaefbf29f5b6d90dcfc64830fb0a430e7eed64b5251c042'
+            }
+        };
 
+        var req = https.request(options, (res) => {
+            var chunks = [];
 
+            res.on("data", function (chunk) {
+                chunks.push(chunk);
+            });
 
-//var options = {
-//    'method': 'POST',
-//    'hostname': 'restapi.tu.ac.th',
-//    'path': '/api/v1/auth/Ad/verify',
-//    'headers': {
-//        'Content-Type': 'application/json',
-//        'Application-Key': 'TUa4e553b83aa271d3411a4ad88395265801fcfb074110e8b0e03962c01f2aed6ab1662db3a0e1451df7835880c6828fcf'
-//    }
-//};
+            res.on("end", function (chunk) {
+                var body = Buffer.concat(chunks);
+                resolve(body.toString());
+            });
 
-//var req = https.request(options, function (res) {
-//    var chunks = [];
+            res.on("error", function (error) {
+                console.error(error);
+                reject(error);
+            });
+        });
+        var postData = "{\n\t\"UserName\":\"" + userName + "\",\n\t\"PassWord\":\"" + password + "\"\n}";
+        req.write(postData);
+        req.end();
+    });
+};
 
-//    res.on("data", function (chunk) {
-//        chunks.push(chunk);
-//    });
+const getStudentInfo = (username) => {
+    return new Promise((resolve, reject) => {
+        var options = {
+            method: "GET",
+            hostname: "restapi.tu.ac.th",
+            path: "/api/v2/profile/std/info/?id=" + username,
+            headers: {
+                "Content-Type": "application/json",
+                "Application-Key":
+                    "TU2791e6ef3a03ece19159c4309b047384b84008287834e184cef9943a97936ce4436bb097531501a1c3fdf8029ec9332f",
+            },
+        };
 
-//    res.on("end", function (chunk) {
-//        var body = Buffer.concat(chunks);
-//        console.log(body.toString());
-//    });
+        var req = https.request(options, (res) => {
+            var chunks = [];
 
-//    res.on("error", function (error) {
-//        console.error(error);
-//    });
-//});
+            res.on("data", function (chunk) {
+                chunks.push(chunk);
+            });
 
+            res.on("end", function (chunk) {
+                var body = Buffer.concat(chunks);
+                //result = body;
+                resolve(body.toString());
+                //result = chunks;
+            });
 
-//var options = {
-//    'method': 'GET',
-//    'hostname': 'restapi.tu.ac.th',
-//    'path': '/api/v2/std/fac/all',
-//    'headers': {
-//        'Content-Type': 'application/json',
-//        'Application-Key': 'TUa4e553b83aa271d3411a4ad88395265801fcfb074110e8b0e03962c01f2aed6ab1662db3a0e1451df7835880c6828fcf'
-//    }
-//};
+            res.on("error", function (error) {
+                console.error(error);
+                reject(error);
+            });
+        });
 
-//var req = https.request(options, function (res) {
-//    var chunks = [];
+        req.end();
+    });
+};
 
-//    res.on("data", function (chunk) {
-//        chunks.push(chunk);
-//    });
-
-//    res.on("end", function (chunk) {
-//        var body = Buffer.concat(chunks);
-//        console.log(body.toString());
-//    });
-
-//    res.on("error", function (error) {
-//        console.error(error);
-//    });
-//});
-
-//req.end();
 
 
 const options = {
