@@ -92,6 +92,7 @@ app.post("/api", async (req, res) => {
         console.log(j);
         if (j.status == true) {
             res.send(temp);
+            res.render("main");
         } else {
             res.send('{"status":false}');
         }
