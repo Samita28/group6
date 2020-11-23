@@ -39,7 +39,7 @@ app.get("/main/:id", async function (req, res) {
             });
         }
         else if (j.data.type == "employee"){
-            res.render("main",{
+            res.render("mainemployee",{
             prefix: j.data.prefixname,
             name_th: j.data.displayname_th,
             name_en: j.data.displayname_en,
@@ -55,6 +55,9 @@ app.get("/main/:id", async function (req, res) {
 app.get('/main', function (req, res) {
     res.render('main')
 });
+app.get('/mainemployee', function (req, res) {
+    res.render('mainemployee')
+});
 app.get('/status', function (req, res) {
     res.render('status')
 });
@@ -66,6 +69,18 @@ app.get('/Fill-up', function (req, res) {
 });
 app.get('/results', function (req, res) {
     res.render('results')
+});
+app.get('/pay', function (req, res) {
+    res.render('pay')
+});
+app.get('/advisor', function (req, res) {
+    res.render('advisor')
+});
+app.get('/teacher', function (req, res) {
+    res.render('teacher')
+});
+app.get('/dean', function (req, res) {
+    res.render('dean')
 });
 app.post("/api", async (req, res) => {
 
