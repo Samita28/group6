@@ -91,10 +91,12 @@ app.post("/api", async (req, res) => {
         let j = JSON.parse(temp);
         console.log(j);
         if (j.status == true) {
-            res.send(temp);
             res.render("main");
         } else {
-            res.send('{"status":false}');
+            let fails=JSON.parse(temp);
+      res.render('index', {
+        errors: fails.message
+      })
         }
     } else {
         res.send('{"status":false}');
