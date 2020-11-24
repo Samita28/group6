@@ -39,7 +39,7 @@ app.get("/main/:id", async function (req, res) {
             });
         }
         else if (j.data.type == "employee"){
-            res.render("mainemployee",{
+            res.render("main",{
             prefix: j.data.prefixname,
             name_th: j.data.displayname_th,
             name_en: j.data.displayname_en,
@@ -55,9 +55,6 @@ app.get("/main/:id", async function (req, res) {
 app.get('/main', function (req, res) {
     res.render('main')
 });
-app.get('/mainemployee', function (req, res) {
-    res.render('mainemployee')
-});
 app.get('/status', function (req, res) {
     res.render('status')
 });
@@ -70,18 +67,6 @@ app.get('/Fill-up', function (req, res) {
 app.get('/results', function (req, res) {
     res.render('results')
 });
-app.get('/pay', function (req, res) {
-    res.render('pay')
-});
-app.get('/advisor', function (req, res) {
-    res.render('advisor')
-});
-app.get('/teacher', function (req, res) {
-    res.render('teacher')
-});
-app.get('/dean', function (req, res) {
-    res.render('dean')
-});
 app.post("/api", async (req, res) => {
 
     console.log(req.body);
@@ -91,12 +76,9 @@ app.post("/api", async (req, res) => {
         let j = JSON.parse(temp);
         console.log(j);
         if (j.status == true) {
-            res.render("main");
+            res.send(temp);
         } else {
-            let fails=JSON.parse(temp);
-      res.render('index', {
-        errors: fails.message
-      })
+            res.send('{"status":false}');
         }
     } else {
         res.send('{"status":false}');
