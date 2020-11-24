@@ -172,15 +172,11 @@
     <div class="row">
       <div class="col-2 bg-color-content">
 
-            <button class="btn btn-primary button button1 button-wrapper pos" class="Sarabun" style="color:white">รูปเเบบของเจ้าหน้าที่</button><br>
-            <form action = "/fill-up/">
-            <button class="btn btn-primary button button1 button-wrapper " class="Sarabun" style="color:white ">รูปเเบบของอาจารย์ที่ปรึกษา</button><br>
-            </form>
-            <button class="btn btn-primary button button1 button-wrapper " class="Sarabun" style="color:white ">รูปเเบบของอาจารย์ประจำวิชา</button><br>
-            <button class="btn btn-primary button button1 button-wrapper " class="Sarabun" style="color:white ">รูปเเบบของคณบดี</button><br>
-            <form action = "/logout/">
-            <button class="btn btn-primary button button1 button-wrapper" class="Sarabun" style="color:white ">ออกจากระบบ</button>
-            </form>
+            <button onclick="window.location.href='/mainemployee';" class="btn btn-primary button button1 button-wrapper pos" class="Sarabun" style="color:white">รูปเเบบของเจ้าหน้าที่</button><br>
+            <button onclick="window.location.href='/advisor';" class="btn btn-primary button button1 button-wrapper " class="Sarabun" style="color:white ">รูปเเบบของอาจารย์ที่ปรึกษา</button><br>
+            <button onclick="window.location.href='/teacher';" class="btn btn-primary button button1 button-wrapper " class="Sarabun" style="color:white ">รูปเเบบของอาจารย์ประจำวิชา</button><br>
+            <button onclick="window.location.href='/dean';" class="btn btn-primary button button1 button-wrapper " class="Sarabun" style="color:white ">รูปเเบบของคณบดี</button><br>
+            <button onclick="window.location.href='/logout';" class="btn btn-primary button button1 button-wrapper" class="Sarabun" style="color:white ">ออกจากระบบ</button>
            
       </div>
 <!--ส่วนตรงกลาง-->
@@ -307,7 +303,7 @@
         <br>
          <div ALIGN = "left">
         <br>
-        <button type="submit"href = "/advisor" class="btn btn-primary" style="font-size:14px; background-color: rgb(48, 46, 46);">Previous</button>
+        <button onclick="window.location.href='/advisor';" class="btn btn-primary" style="font-size:14px; background-color: rgb(48, 46, 46);">Previous</button>
     
         </div>    
      </div>
