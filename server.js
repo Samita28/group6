@@ -55,6 +55,9 @@ app.get("/main/:id", async function (req, res) {
 app.get('/main', function (req, res) {
     res.render('main')
 });
+app.get('/checkstaff', function (req, res) {
+    res.render('checkstaff')
+});
 app.get('/mainemployee', function (req, res) {
     res.render('mainemployee')
 });
@@ -82,6 +85,18 @@ app.get('/teacher', function (req, res) {
 app.get('/dean', function (req, res) {
     res.render('dean')
 });
+app.get('/dean1', function (req, res) {
+    res.render('dean1')
+});
+app.get('/advisor1', function (req, res) {
+    res.render('advisor1')
+});
+app.get('/staffdoc', function (req, res) {
+    res.render('staffdoc')
+});
+app.get('/instructor', function (req, res) {
+    res.render('instructor')
+});
 app.post("/api", async (req, res) => {
 
     console.log(req.body);
@@ -91,9 +106,32 @@ app.post("/api", async (req, res) => {
         let j = JSON.parse(temp);
         console.log(j);
         if (j.status == true) {
-            res.send(temp);
-        } else {
-            res.send('{"status":false}');
+            if(j.type == "student"){
+        res.render("main",
+            {
+                prefix: j.prefixname,
+                name_th: j.displayname_th,
+                name_en: j.displayname_en,
+                email: j.email,
+                faculty: j.faculty,
+                department: j.department
+            });
+        }
+        else if (j.type == "employee"){
+            res.render("mainemployee",{
+            prefix: j.prefixname,
+            name_th: j.displayname_th,
+            name_en: j.displayname_en,
+            email: j.email,
+            organization: j.organization,
+            department: j.department
+            
+        });
+        }} else {
+            let fails=JSON.parse(temp);
+      res.render('index', {
+        errors: fails.message
+      })
         }
     } else {
         res.send('{"status":false}');
