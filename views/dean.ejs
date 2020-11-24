@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>รูปเเบบของคณบดี</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&display=swap" rel="stylesheet">  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+
+.header {
+        background-color: #eea15d;
+        padding: 20px;
+        text-align: center;
+    }
+    h1 {
+        font-size: 70px;
+        font-style: normal;
+        font-family: "Mitr";
+    }
+    h2 {
+        font-size: 30px;
+        font-style: normal;
+        font-family: "Kanit";
+    }   
+    h3 {
+        font-size: 25px;
+        font-style: normal;
+        font-family: "Kanit";
+    }
+    h4 {
+        font-size: 20px;
+        font-style: normal;
+        font-family: "Kanit";
+    }
+    .sideLeft{
+        background-color: #042f5a;
+        width:220px;
+        height:55px;
+        font-size:15px;
+        display:block;
+        text-align:center;
+        border:none;
+        border-radius:2px;
+        cursor:pointer;
+        color: white;
+    }
+    .button{
+        background-color: #042f5a;
+
+    }
+    .button-wrapper{
+        width:220px;
+        height:55px;
+        font-size:15px;
+        display:block;
+        /*text-align:center;*/
+        border:none;
+        border-radius:2px;
+        cursor:pointer;
+        color: white;
+    }
+    .posOfData{
+        margin-top: -20px;
+        margin-left: 300px;
+    }
+    .pos{
+        margin-top: 5px;
+    }
+    .button1{
+        padding: 15px 15px; 
+        border-radius: 7px;
+    
+    }
+    .Sarabun {
+        font-family: Sarabun;
+    }
+    .Kanit{
+        font-family: Kanit;
+    }
+    .disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+    .aside {
+        float: left;
+        margin-top: 170px;
+        border: 2px solid black;
+        background-color: #f0a985;
+        position: absolute;
+        width:250px;
+        height: 550px;
+        align: center;
+    }
+    .area{
+        padding: 10px;
+        border: 1px solid #4CAF50;
+        border-radius: 8px;
+        background-color: rgb(182, 140, 85);
+    }
+    .bg-color {
+        background-color: rgb(241, 237, 214);
+        padding-bottom:100px;
+
+    }
+    .bg-color-content{
+        background-color: #94705e;
+       
+    }
+    table, tr,th {
+        border: 2px solid black;
+        padding: 5px;
+    }
+    .table {
+        border-spacing: 10px;
+    }
+    footer{
+        text-align: center;
+        height: 50px;
+        font-size: 20px;
+        background-color: rgb(48, 46, 46);
+        color: white; 
+        
+    }
+    .right_box_area{
+        border: 1px solid #f5fdf5;
+        border-radius: 4px;
+        background-color: rgb(245, 250, 242);
+    }
+    .box_right{
+        width:220px;
+        height:55px;
+        border: 1px solid #4CAF50;
+        border-radius: 5px;
+        background-color: rgb(119, 177, 81);
+        font-size: 15px;
+        color: white;
+        text-align: center;
+    }
+    </style>
+    </head>
+    <body>
+        <div class="container-fluid header-height" >
+            <h1 class= "header">ระบบการจดทะเบียนล่าช้า</h1>
+<!--ส่วนซ้าย-->  
+<div class="container-fluid bg-color">
+    <div class="row">
+      <div class="col-2 bg-color-content">
+
+        <form action = "/mainemployee">
+            <button class="btn btn-primary button button1 button-wrapper pos" class="Sarabun" style="color:white">รูปเเบบของเจ้าหน้าที่</button><br>
+          </form>
+            <form action = "/advisor/">
+            <button class="btn btn-primary button button1 button-wrapper " class="Sarabun" style="color:white ">รูปเเบบของอาจารย์ที่ปรึกษา</button><br>
+            </form>
+            <form action ="/teacher/">
+            <button class="btn btn-primary button button1 button-wrapper" class="Sarabun" style="color:white ">รูปเเบบของอาจารย์ประจำวิชา</button><br>
+            </form>
+            <form action = "/dean/">
+            <button class="btn btn-primary button button1 button-wrapper " class="Sarabun" style="color:white ">รูปเเบบของคณบดี</button><br>
+        </form>
+            <form action = "/logout/">
+            <button class="btn btn-primary button button1 button-wrapper" class="Sarabun" style="color:white ">ออกจากระบบ</button>
+            </form>
+      </div>   
+      <br>
+      <br> 
+<br>
+<br> 
+<br> 
+<br>
+<br> 
+<br>
+<br> 
+                           
+<!--ส่วนตรงกลาง-->
+    <div class="col-10" style="background-color: rgb(253, 252, 246); ">
+        <h2>รูปเเบบของคณบดี</h2>
+        <br>
+            <h3>เอกสารการยื่นคำร้องของนักศึกษา :</h3>
+                <h4 style="border: 2px solid black;"><a href="/dean1" style="color:black">น.ส. ใจดี มีสุข 6209650xxx คณะวิทยาศาสตร์...</a></h4> 
+            <br>
+                <h4 style="border: 2px solid black;background-color:#BFC9CA;"><a href="/dean1" style="color:black">นาย ง่วง นอน 6209650xxx คณะวิทยาศาสตร์...</a></h4>
+            <br>    
+                <h4 style="border: 2px solid black;background-color:#BFC9CA;"><a href="/dean1" style="color:black">นาย ดีใจ ที่สุด 6209650xxx คณะวิทยาศาสตร์...</a></h4>
+        <br><br>
+        <br><br><br>    
+        <br><br><br> 
+
+        <br><br><br><br><br> <br><br><br><br> 
+
+                            
+<!--ส่วนขวา-->   
+        </div>
+    </div>  
+</div>
+<!-- footer -->
+      <footer>
+        <div >
+            <p >TEL: 081-xxx-xxxx</p>
+        </div>
+    </footer>       
+            </div>
+    </body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>รูปแบบคำร้องของคณบดี</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&display=swap" rel="stylesheet">  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+    .header {
+        background-color: #eea15d;
+        padding: 20px;
+        text-align: center;
+    }
+    h1 {
+        font-size: 70px;
+        font-style: normal;
+        font-family: "Mitr";
+        
+    }
+    h2{
+        font-size: 30px;
+        font-style: normal;
+        font-family: "Kanit";
+        
+    }   
+    .center_type{
+        background-color:  #f1f1f1;
+    }
+    .sideLeft{
+        background-color:  #042f5a;
+        width:220px;
+        height:55px;
+        font-size:15px;
+        display:block;
+        text-align:center;
+        border:none;
+        border-radius:2px;
+        cursor:pointer;
+        color: white;
+    }
+    .button{
+        background-color:  #042f5a;
+        
+    }
+    .button-wrapper{
+        width:220px;
+        height:55px;
+        font-size:16px;
+        display:block;
+        /*text-align:center;*/
+        border:none;
+        border-radius:2px;
+        cursor:pointer;
+        color: white;
+    }
+    .posOfData{
+        margin-top: -20px;
+        margin-left: 300px;
+    }
+    .pos{
+        margin-top: 5px;
+    }
+    .button1{
+        padding: 15px 15px; 
+        border-radius: 7px;
+    
+    }
+    .Sarabun {
+        font-family:  Sarabun;
+    }
+    .disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+    .aside {
+        float: left;
+        margin-top: 170px;
+        border: 2px solid black;
+        background-color: #f0a985;
+        position: absolute;
+        width:250px;
+        height: 550px;
+        align: center;
+    }
+    .area{
+        padding: 10px;
+        border: 1px solid #4CAF50;
+        border-radius: 8px;
+        background-color: rgb(182, 140, 85);
+    }
+    .bg-color {
+        background-color: rgb(241, 237, 214);
+        padding-bottom:100px;
+
+    }
+    .bg-color-content{
+        background-color: #94705e;
+       
+    }
+    table, tr,th {
+        border: 2px solid black;
+        padding: 5px;
+    }
+    .table {
+        border-spacing: 10px;
+    }
+    footer{
+        text-align: center;
+        height: 50px;
+        font-size: 20px;
+        background-color: rgb(48, 46, 46);
+        color: white; 
+        
+    }
+    .right_box_area{
+        
+        border: 1px solid #f5fdf5;
+        border-radius: 4px;
+        background-color: rgb(245, 250, 242);
+    }
+    a:link {
+    color: black;
+    }
+
+    /* visited link */
+    a:visited {
+    color:black;
+    }
+
+    /* mouse over link */
+    a:hover {
+    color:black;
+    }
+
+    /* selected link */
+    a:active {
+    color: black;
+    }        
+    .box_right{
+        width:220px;
+        height:55px;
+        border: 1px solid #4CAF50;
+        border-radius: 5px;
+        background-color: rgb(119, 177, 81);
+        font-size: 15px;
+        color: white;
+        text-align: center;
+    }
+    </style>
+    </head>
+    <body>
+        <div class="container-fluid header-height" >
+            <h1 class= "header">ระบบการจดทะเบียนล่าช้า</h1>
+  <!--ส่วนซ้าย-->    
+  <div class="container-fluid bg-color">
+    <div class="row">
+      <div class="col-2 bg-color-content">
+
+            <button class="btn btn-primary button button1 button-wrapper pos" class="Sarabun" style="color:white">รูปเเบบของเจ้าหน้าที่</button><br>
+            <form action = "/fill-up/">
+            <button class="btn btn-primary button button1 button-wrapper " class="Sarabun" style="color:white ">รูปเเบบของอาจารย์ที่ปรึกษา</button><br>
+            </form>
+            <button class="btn btn-primary button button1 button-wrapper  " class="Sarabun" style="color:white ">รูปเเบบของอาจารย์ประจำวิชา</button><br>
+            <button class="btn btn-primary button button1 button-wrapper  " class="Sarabun" style="color:white ">รูปเเบบของคณบดี</button><br>
+            <form action = "/logout/">
+            <button class="btn btn-primary button button1 button-wrapper" class="Sarabun" style="color:white ">ออกจากระบบ</button>
+            </form>
+           
+      </div>
+<!--ส่วนตรงกลาง-->
+<div class="col-8 " style="background-color: rgb(253, 252, 246); ">
+    <h2>เอกสารยื่นคำร้องของนักศึกษา</h2>
+    <h2><a href="#"><i class="fa fa-fw fa-user" style="box-sizing: border-box;"></i> User</a></h2>
+
+    <br>
+    <h3 align="center" style="font-size:20px"> </h3>
+        <form align="left">
+            <div class="area" style="font-size: 16px;">
+                <div style="background-color: cornsilk;">
+                <table style="width: 100%;">
+                    <tr>
+                        <th ><label style="font-family:Kanit;" for ="term">ภาคเรียนที่ &nbsp; </label>
+                        <select name="te" id="">
+                        <option style="font-family:Kanit;" value="เทอมที่1">1/2563</option>
+                        <option style="font-family:Kanit;" value="เทอมที่2">2/2563</option>
+                        <option style="font-family:Kanit;" value="เทอมที่2">1/2564</option>
+                        <option style="font-family:Kanit;" value="เทอมที่2">2/2564</option>
+                        <select>
+                            <div>
+                                <label style="font-family:Kanit;" for="idsubject">รหัสวิชา  &nbsp;&nbsp; &nbsp; &nbsp; </label>
+                                <input type="text" name="idsubject" required>
+                            </div>
+                            <div>
+                                <label style="font-family:Kanit;" for="subjectname">ชื่อวิชา  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; </label>
+                                <input  type="text" name="subjectname" required>
+                            </div>
+                            <div>
+                                <label style="font-family:Kanit;" for="sec">Sections    &nbsp; &nbsp; </label>
+                                <select name="te" id="">
+                                    <option value="650001">650001</option>
+                                    <option value="650002">650002</option>
+                                    <option value="650003">650003</option>
+                            
+                                </select>
+                        </th>
+                        <div>            
+                            <th  style="width:58%">
+                                <label style="font-family:Kanit;" for="comment">เหตุผลที่ยื่นคำร้อง:</label>
+                                <textarea class="form-control" rows="5" style="font-size: 12px;" id="comment" name="text"></textarea>
+                            </th>
+                        </select>    
+                    
+                </table>
+            
+                </div>
+            </div>
+              
+        </form>
+        <div ALIGN = "left">
+            <br>
+            <label  style="font-size: 20px;" >
+                <input type="radio" checked="checked" name="radio">&nbsp;อนุมัติ&nbsp;
+                <span class="checkmark"></span>
+            </label>
+            <label style="font-size: 20px;">
+                <input type="radio" name="radio">&nbsp;ไม่อนุมัติ
+                <span class="checkmark"></span>
+            </label> 
+            </div>
+         <br>
+        <hr>
+    <!--comment ด่านล่าง-->
+    <div >
+            <form>
+                <div class="form-group" style="font-size:16px">
+                  <label for="comment">ความคิดเห็นของคณบดี:</label>
+                  <textarea class="form-control" rows="5" style="font-size:16px；" id="comment" name="text"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="font-size:14px">Submit</button>
+            </form>
+    </div> 
+    <br>
+    <button type="submit"href = "dean" class="btn btn-primary" style="font-size:14px; background-color: rgb(48, 46, 46);">Previous</button>
+    <br>   
+ </div>
+                          
+<!--ส่วนขวา-->
+
+                  <!--ส่วนขวา-->
+                  <div class="col-2 bg-color-content"> 
+                      
+                    <br>
+                    <h3><p><a href="#"><i class="fa fa-fw fa-user" style="box-sizing: border-box; " style="background: ghostwhite;" ></i> นายดีใจ  ใจดี</a></a></p></h3>
+                    <br>
+                    <h3><p><a href="#"><i class="fa fa-fw fa-user" style="box-sizing: border-box;"></i> นางสาวใจดี   ดีใจ</a></a></p></h3>                       </div>    
+              </div>
+            </div>
+          </div>
+            
+              <!-- footer -->
+      <footer>
+        <div >
+            <p >TEL: 081-xxx-xxxx</p>
+        </div>
+    </footer>       
+            </div>
+    </body> 
