@@ -55,6 +55,9 @@ app.get("/main/:id", async function (req, res) {
 app.get('/main', function (req, res) {
     res.render('main')
 });
+app.get('/checkstaff', function (req, res) {
+    res.render('checkstaff')
+});
 app.get('/mainemployee', function (req, res) {
     res.render('mainemployee')
 });
@@ -81,6 +84,18 @@ app.get('/teacher', function (req, res) {
 });
 app.get('/dean', function (req, res) {
     res.render('dean')
+});
+app.get('/dean1', function (req, res) {
+    res.render('dean1')
+});
+app.get('/advisor1', function (req, res) {
+    res.render('advisor1')
+});
+app.get('/staffdoc', function (req, res) {
+    res.render('staffdoc')
+});
+app.get('/instructor', function (req, res) {
+    res.render('instructor')
 });
 app.post("/api", async (req, res) => {
 
